@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>order hijab 
+
+    </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ebd5df;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(245, 245, 245, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            color: #f5208a;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #070707;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #fcfbfbfb;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #f31c80f6;
+        }
+
+        .produk-img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pemesanan Albarokah Garment Hijab </h1>
+        <form action="/submit_order" method="post">
+            <label for="nama">Nama Lengkap</label>
+            <input type="text" id="nama" name="nama" required>
+            
+            <label for="alamat">Alamat Pengiriman</label>
+            <input type="text" id="alamat" name="alamat" required>
+            
+            <label for="telepon">Nomor Telepon</label>
+            <input type="text" id="telepon" name="telepon" required>
+            
+            <label for="produk">Produk</label>
+            <select id="produk" name="produk" required>
+                <option value="" disabled selected>Pilih Produk</option>
+                <option value="Hijab Segi Empat Polos - Rp25.000">Hijab Segi Empat Polos - Rp25.000</option>
+                <option value="Hijab Pashmina kaos rayon - Rp35.000">Hijab Pashmina kaos rayon - Rp35.000</option>
+            </select>
+
+            <img src="segiempat.jpg" alt="Hijab Segi Empat Polos" class="produk-img" id="gambar1" style="display:none;">
+            <img src="pashminakaos.jpg" alt="Hijab Pashmina Polos" class="produk-img" id="gambar2" style="display:none;">
+
+            
+            <label for="pilih warna">pilih warna</label>
+            <input type="text" id="pilih warna" name="pilih warna" required>
+
+            <label for="jumlah">Jumlah</label>
+            <input type="number" id="jumlah" name="jumlah" min="1" required>
+            
+    <a href="https://web.whatsapp.com/send?phone=62895365824812&text=RestiAprilliaIsma(222303025)..."> CONTACT US
+        
+    </a>
+ 
+    <script>
+        document.getElementById('produk').addEventListener('change', function() {
+            var selectedProduk = this.value;
+            var images = document.getElementsByClassName('produk-img');
+
+            for (var i = 0; i < images.length; i++) {
+                images[i].style.display = 'none';
+            }
+
+            if (selectedProduk === 'Hijab Segi Empat Polos') {
+                document.getElementById('gambar1').style.display = 'block';
+            } else if (selectedProduk === 'Hijab Segi Empat Motif Bunga') {
+                document.getElementById('gambar2').style.display = 'block';
+            } else if (selectedProduk === 'Hijab Pashmina Polos') {
+                document.getElementById('gambar3').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
